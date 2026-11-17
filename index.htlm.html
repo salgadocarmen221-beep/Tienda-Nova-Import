@@ -1,0 +1,2222 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechImport HN | Productos Tecnológicos Importados de EE. UU.</title>
+  <meta name="description" content="Tienda en línea de productos tecnológicos y accesorios electrónicos importados desde Estados Unidos para Honduras. Cotiza y reserva directo por WhatsApp." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. VARIABLES & DESIGN SYSTEM (Paleta sobria y confiable sector mascotas)
+       ========================================================================== */
+    :root {
+      --bg-primary: #FAF8F5;        /* Crema cálido / Arena suave */
+      --bg-secondary: #F1EDE6;      /* Beige neutro para contraste sutil */
+      --surface: #FFFFFF;           /* Blanco puro para tarjetas */
+      --primary: #1F4E46;           /* Verde bosque profundo (confianza y solidez) */
+      --primary-hover: #163A34;
+      --primary-light: #E6F0EE;
+      --accent: #C87D4B;            /* Terracota / Ámbar cálido */
+      --accent-hover: #B06A3B;
+      --whatsapp: #25D366;
+      --whatsapp-hover: #1EBE5D;
+      --text-main: #1E2524;         /* Carbón suave */
+      --text-muted: #5C6B68;        /* Gris pizarra cálido */
+      --border: #E2DDD5;
+      --shadow-sm: 0 2px 8px rgba(31, 78, 70, 0.05);
+      --shadow-md: 0 10px 25px -5px rgba(31, 78, 70, 0.08), 0 4px 10px -2px rgba(31, 78, 70, 0.04);
+      --shadow-lg: 0 20px 35px -10px rgba(31, 78, 70, 0.14);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --transition: all 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* ==========================================================================
+       2. RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.2;
+      color: var(--text-main);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .section-padding {
+      padding: 5rem 0;
+    }
+
+    /* ==========================================================================
+       3. COMPONENTES REUTILIZABLES (Botones, Badges, Títulos)
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.85rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(31, 78, 70, 0.2);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(31, 78, 70, 0.28);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary-light);
+    }
+
+    .btn-whatsapp {
+      background-color: var(--whatsapp);
+      color: #0B3B1E;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.28);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: var(--whatsapp-hover);
+      transform: translateY(-2px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-available {
+      background-color: #E3F5EA;
+      color: #166534;
+      border: 1px solid #BBF7D0;
+    }
+
+    .badge-imported {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid #C5DDD9;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3.25rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+      margin-bottom: 0.85rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+
+    /* ==========================================================================
+       4. HEADER & NAVEGACIÓN STICKY
+       ========================================================================== */
+    .top-banner {
+      background-color: var(--primary);
+      color: #F4F7F6;
+      text-align: center;
+      font-size: 0.82rem;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background-color: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--primary);
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--primary);
+      color: #FFF;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color 0.2s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .cart-trigger {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cart-trigger:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .cart-badge {
+      background-color: var(--accent);
+      color: #FFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      transition: transform 0.2s ease;
+    }
+
+    .cart-badge.bump {
+      transform: scale(1.3);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       5. HERO SECTION & BENEFICIOS
+       ========================================================================== */
+    .hero {
+      padding: 4.5rem 0 4rem;
+      background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 4.2vw, 3.3rem);
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 560px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .trust-stat strong {
+      display: block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    .trust-stat span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .hero-showcase {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .showcase-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .showcase-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .showcase-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .showcase-item:hover {
+      border-color: var(--primary);
+      transform: translateX(4px);
+    }
+
+    .showcase-item img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      background: #FFF;
+      border-radius: 8px;
+      padding: 4px;
+      border: 1px solid var(--border);
+    }
+
+    .showcase-item-info {
+      flex: 1;
+    }
+
+    .showcase-item-info h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .showcase-item-info span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .showcase-item-price {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+
+    /* Beneficios */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .benefit-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.6rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: #C5DDD9;
+    }
+
+    .benefit-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .benefit-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .benefit-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       6. CATÁLOGO / TIENDA (Filtros + Grid de Tarjetas)
+       ========================================================================== */
+    .catalog-controls {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 2.25rem;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr auto;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .control-group label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.7rem 0.95rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-size: 0.92rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(31, 78, 70, 0.12);
+      background-color: #FFF;
+    }
+
+    .catalog-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .product-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: #B9D3CE;
+    }
+
+    .product-media {
+      position: relative;
+      height: 240px;
+      background: #FFFFFF;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .product-media img {
+      max-height: 185px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.35s ease;
+    }
+
+    .product-card:hover .product-media img {
+      transform: scale(1.06);
+    }
+
+    .product-badges {
+      position: absolute;
+      top: 0.85rem;
+      left: 0.85rem;
+      right: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.4rem;
+      pointer-events: none;
+    }
+
+    .photo-caption-tag {
+      position: absolute;
+      bottom: 0.6rem;
+      right: 0.75rem;
+      background: rgba(30, 37, 36, 0.75);
+      color: #FFF;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      backdrop-filter: blur(4px);
+    }
+
+    .product-body {
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-brand-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-brand {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+    }
+
+    .product-id {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: monospace;
+    }
+
+    .product-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .product-title:hover {
+      color: var(--primary);
+    }
+
+    .product-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    .product-price-box {
+      padding-top: 1rem;
+      border-top: 1px dashed var(--border);
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .price-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .price-value {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .product-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.6rem;
+    }
+
+    .btn-icon-only {
+      padding: 0.85rem;
+      background: var(--bg-secondary);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+
+    .btn-icon-only:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* ==========================================================================
+       7. QUIÉNES SOMOS & TESTIMONIOS
+       ========================================================================== */
+    .about-section {
+      background-color: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .about-content h3 {
+      font-size: 1.65rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-content p {
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .process-steps {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .step-card {
+      background: var(--surface);
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #FFF;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stars {
+      color: #D97706;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .testimonial-card p {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-author {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .testimonial-city {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       8. CONTÁCTANOS
+       ========================================================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 2.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-info-box {
+      background: var(--primary);
+      color: #FFF;
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-info-box h3 {
+      color: #FFF;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-info-box p {
+      color: #D5E5E2;
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-details {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-details li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    /* ==========================================================================
+       9. MODAL DE PRODUCTO (Premium)
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 32, 30, 0.65);
+      backdrop-filter: blur(5px);
+      z-index: 1100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.28s ease, visibility 0.28s ease;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-card {
+      background: var(--surface);
+      width: 100%;
+      max-width: 840px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+      transform: translateY(20px) scale(0.97);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      max-height: 92vh;
+      overflow-y: auto;
+    }
+
+    .modal-backdrop.active .modal-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      font-size: 1.25rem;
+      color: var(--text-main);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      z-index: 10;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      background: var(--primary);
+      color: #FFF;
+      transform: rotate(90deg);
+    }
+
+    .modal-body {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+    }
+
+    .modal-image-pane {
+      background: #FFFFFF;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .modal-image-pane img {
+      max-height: 320px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+
+    .modal-info-pane {
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+      font-size: 0.9rem;
+    }
+
+    .modal-meta-table td {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-meta-table td:first-child {
+      color: var(--text-muted);
+      font-weight: 500;
+      width: 42%;
+    }
+
+    .modal-meta-table td:last-child {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       10. DRAWER DEL CARRITO LATERAL
+       ========================================================================== */
+    .cart-drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 32, 30, 0.55);
+      backdrop-filter: blur(3px);
+      z-index: 1200;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
+    }
+
+    .cart-drawer-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 440px;
+      height: 100vh;
+      background: var(--surface);
+      z-index: 1250;
+      display: flex;
+      flex-direction: column;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+      transform: translateX(100%);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cart-drawer.active {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      padding: 1.35rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-primary);
+    }
+
+    .cart-items-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 0.9rem;
+      padding: 0.9rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      align-items: center;
+    }
+
+    .cart-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      background: #FFF;
+      border-radius: 8px;
+      padding: 4px;
+      border: 1px solid var(--border);
+    }
+
+    .cart-item-details {
+      flex: 1;
+    }
+
+    .cart-item-details h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .cart-item-details .item-brand {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .qty-controls {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #FFF;
+      overflow: hidden;
+    }
+
+    .qty-btn {
+      width: 28px;
+      height: 28px;
+      border: none;
+      background: transparent;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--primary);
+    }
+
+    .qty-btn:hover {
+      background: var(--primary-light);
+    }
+
+    .qty-val {
+      padding: 0 0.6rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .remove-item-btn {
+      background: none;
+      border: none;
+      color: #B91C1C;
+      font-size: 0.8rem;
+      cursor: pointer;
+      padding: 0.3rem;
+    }
+
+    .cart-footer {
+      padding: 1.35rem 1.5rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg-primary);
+    }
+
+    .cart-summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .cart-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.75rem;
+      margin-top: 0.5rem;
+      border-top: 1px solid var(--border);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    /* ==========================================================================
+       11. TOAST NOTIFICATIONS & BOTÓN FLOTANTE WHATSAPP
+       ========================================================================== */
+    .toast-container {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      z-index: 1400;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .toast {
+      background: var(--primary);
+      color: #FFF;
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-lg);
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      animation: slideUp 0.25s ease forwards;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .floating-wa {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 950;
+      background: var(--whatsapp);
+      color: #0B3B1E;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+      transition: var(--transition);
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.08);
+    }
+
+    footer {
+      background: var(--primary);
+      color: #D5E5E2;
+      padding: 3rem 0 2rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.82rem;
+    }
+
+    /* ==========================================================================
+       12. RESPONSIVE DESIGN
+       ========================================================================== */
+    @media (max-width: 960px) {
+      .hero-grid, .about-grid, .contact-grid, .modal-body {
+        grid-template-columns: 1fr;
+      }
+      .catalog-controls {
+        grid-template-columns: 1fr 1fr;
+      }
+      .modal-image-pane {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        flex-direction: column;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .catalog-controls {
+        grid-template-columns: 1fr;
+      }
+      .contact-grid {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior informativa -->
+  <div class="top-banner">
+    🇺🇸 Importación directa desde Estados Unidos hacia toda Honduras 🇭🇳 • Cotización y reserva inmediata vía WhatsApp
+  </div>
+
+  <!-- Navegación Principal -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#inicio" class="brand">
+        <span class="brand-icon">⚡</span>
+        <span>TechImport<span style="color: var(--accent);">HN</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" onclick="closeMobileMenu()">Inicio</a></li>
+        <li><a href="#catalogo" onclick="closeMobileMenu()">Catálogo / Tienda</a></li>
+        <li><a href="#nosotros" onclick="closeMobileMenu()">Quiénes Somos</a></li>
+        <li><a href="#contacto" onclick="closeMobileMenu()">Contáctanos</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="cart-trigger" onclick="toggleCart(true)" aria-label="Abrir carrito de cotización">
+          🛒 <span>Carrito</span>
+          <span class="cart-badge" id="cartCountBadge">0</span>
+        </button>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       SECCIÓN 1: HOME (Hero + Beneficios + Productos Destacados)
+       ======================================================================== -->
+  <section id="inicio" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-pill">
+            <span>✓</span> Stock verificado • Importado de EE. UU.
+          </div>
+          <h1>Tecnología y accesorios <span>importados de EE. UU.</span> con respaldo en Honduras</h1>
+          <p>
+            Adquiere artículos seleccionados directamente desde Estados Unidos con precios transparentes en Lempiras (L). Explora nuestro catálogo real, arma tu pedido y coordina disponibilidad al instante por WhatsApp.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#catalogo" class="btn btn-primary">Ver catálogo completo →</a>
+            <a href="https://wa.me/50499864645?text=Hola%20%F0%9F%98%8A%20Me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20sobre%20los%20productos%20tecnol%C3%B3gicos%20importados%20disponibles." target="_blank" rel="noopener" class="btn btn-outline">
+              Consultar por WhatsApp
+            </a>
+          </div>
+
+          <div class="hero-trust-row">
+            <div class="trust-stat">
+              <strong>100% Real</strong>
+              <span>Fotos exactas del catálogo</span>
+            </div>
+            <div class="trust-stat">
+              <strong>Precios en Lps</strong>
+              <span>Sin costos ocultos</span>
+            </div>
+            <div class="trust-stat">
+              <strong>Atención Directa</strong>
+              <span>Reserva sin pasarela compleja</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vista rápida destacada -->
+        <div class="hero-showcase">
+          <div class="showcase-header">
+            <h3 style="font-size: 1.05rem;">Artículos destacados</h3>
+            <span class="badge badge-imported">EE. UU. → HN</span>
+          </div>
+          <div class="showcase-list" id="featuredList">
+            <!-- Renderizado dinámicamente desde JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Beneficios / Por qué comprar con nosotros -->
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🇺🇸</div>
+          <h3>Importación Directa</h3>
+          <p>Traemos cada artículo desde Estados Unidos cuidando su integridad y autenticidad de marca.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📸</div>
+          <h3>Transparencia Total</h3>
+          <p>Visualiza la fotografía real correspondiente a cada producto antes de solicitar tu cotización.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💬</div>
+          <h3>Reserva Sin Fricción</h3>
+          <p>Agrega tus productos al carrito y envía el resumen automático a nuestro WhatsApp Business.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🤝</div>
+          <h3>Trato Personalizado</h3>
+          <p>Coordinamos contigo entrega segura, llamada de confirmación o visita en Honduras.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECCIÓN 2: CATÁLOGO / TIENDA
+       ======================================================================== -->
+  <section id="catalogo" class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Catálogo Oficial</span>
+        <h2>Productos Tecnológicos y Accesorios</h2>
+        <p>Selecciona cualquier artículo para ver su fotografía ampliada, ficha de disponibilidad o agregarlo a tu carrito de cotización.</p>
+      </div>
+
+      <!-- Buscador y Filtros -->
+      <div class="catalog-controls" role="region" aria-label="Filtros del catálogo">
+        <div class="control-group">
+          <label for="searchInput">Buscar producto o marca</label>
+          <input type="search" id="searchInput" class="form-input" placeholder="Ej. Airpods, APPLE, Computadora, HP, JBL..." />
+        </div>
+
+        <div class="control-group">
+          <label for="brandFilter">Filtrar por marca</label>
+          <select id="brandFilter" class="form-input">
+            <option value="ALL">Todas las marcas</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="priceFilter">Rango de precio (Lps)</label>
+          <select id="priceFilter" class="form-input">
+            <option value="ALL">Todos los precios</option>
+            <option value="0-5000">Hasta L 5,000</option>
+            <option value="5001-15000">L 5,001 – L 15,000</option>
+            <option value="15001-30000">L 15,001 – L 30,000</option>
+            <option value="30001-999999">Más de L 30,000</option>
+          </select>
+        </div>
+
+        <div class="control-group" style="justify-content: flex-end;">
+          <label style="visibility: hidden;">Acción</label>
+          <button type="button" class="btn btn-outline" onclick="resetFilters()" style="padding: 0.7rem 1rem;">
+            Limpiar
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de estado + Acceso directo WhatsApp en Catálogo -->
+      <div class="catalog-meta-bar">
+        <span id="resultsCount">Mostrando 5 productos</span>
+        <a href="https://wa.me/50499864645?text=Hola%20%F0%9F%98%8A%20Estoy%20viendo%20el%20cat%C3%A1logo%20en%20la%20web%20y%20me%20gustar%C3%ADa%20consultar%20disponibilidad." target="_blank" rel="noopener" class="btn btn-whatsapp" style="padding: 0.55rem 1.1rem; font-size: 0.88rem;">
+          💬 ¿Dudas sobre algún artículo? Escríbenos por WhatsApp
+        </a>
+      </div>
+
+      <!-- Grid de Tarjetas -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Renderizado dinámicamente desde JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECCIÓN 3: QUIÉNES SOMOS
+       ======================================================================== -->
+  <section id="nosotros" class="section-padding about-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nuestra Historia y Respaldo</span>
+        <h2>Importación confiable desde EE. UU. para Honduras</h2>
+        <p>Nacimos con el propósito de acercar tecnología y artículos importados de calidad con un proceso claro, honesto y sin intermediarios opacos.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-content">
+          <h3>Compromiso con la transparencia y seguridad</h3>
+          <p>
+            Sabemos que comprar tecnología importada requiere confianza. Por eso trabajamos con un catálogo verificado donde cada ficha muestra la imagen real del artículo, su marca declarada y su precio claro en Lempiras.
+          </p>
+          <p>
+            No te pedimos ingresar tarjetas en pasarelas desconocidas: armas tu carrito en nuestra plataforma y cierras tu cotización directamente con nuestro equipo comercial en Honduras vía WhatsApp Business.
+          </p>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem;">
+            <span class="badge badge-available">✓ Verificación previa</span>
+            <span class="badge badge-imported">✓ Logística EE. UU. - HN</span>
+            <span class="badge badge-available">✓ Atención humana directa</span>
+          </div>
+        </div>
+
+        <div class="process-steps">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <div>
+              <h4>Selección en Estados Unidos</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">Adquirimos los productos y accesorios directamente en EE. UU. asegurando su estado y autenticidad.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <div>
+              <h4>Registro Transparente en Catálogo</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">Documentamos cada artículo con su fotografía real, marca y valor en Lempiras sin alterar especificaciones.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <div>
+              <h4>Reserva y Coordinación Personalizada</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">Envías tu carrito por WhatsApp, confirmamos existencias al momento y coordinamos entrega o visita.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonios -->
+      <h3 style="text-align: center; margin-bottom: 1.75rem; font-size: 1.4rem;">Lo que dicen nuestros clientes en Honduras</h3>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Excelente atención por WhatsApp. Confirmaron disponibilidad de inmediato y el producto llegó exactamente como se veía en la foto del catálogo."</p>
+          <div class="testimonial-author">Carlos M.</div>
+          <div class="testimonial-city">Tegucigalpa, Francisco Morazán</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Me gustó mucho poder armar el pedido en la página con los precios claros en lempiras y luego coordinar la entrega sin complicaciones."</p>
+          <div class="testimonial-author">Andrea R.</div>
+          <div class="testimonial-city">San Pedro Sula, Cortés</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Muy responsables y transparentes desde la primera consulta. Definitivamente volveré a cotizar mis accesorios importados con ellos."</p>
+          <div class="testimonial-author">José Luis P.</div>
+          <div class="testimonial-city">La Ceiba, Atlántida</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECCIÓN 4: CONTÁCTANOS
+       ======================================================================== -->
+  <section id="contacto" class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contacto Directo</span>
+        <h2>¿Listo para cotizar o agendar una visita?</h2>
+        <p>Escríbenos directamente por WhatsApp o déjanos tus datos y un asesor se pondrá en contacto contigo.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-box">
+          <div>
+            <h3>Canales de Atención</h3>
+            <p>Respondemos tus consultas sobre disponibilidad, tiempos de entrega y métodos de pago en Honduras.</p>
+            <ul class="contact-details">
+              <li>📱 <strong>WhatsApp Business:</strong> +504 9986-4645</li>
+              <li>🇭🇳 <strong>Cobertura:</strong> Envíos y coordinación en Honduras</li>
+              <li>🇺🇸 <strong>Origen:</strong> Importación directa desde EE. UU.</li>
+              <li>🕒 <strong>Horario:</strong> Lunes a Sábado • 8:00 AM – 6:00 PM</li>
+            </ul>
+          </div>
+
+          <a href="https://wa.me/50499864645?text=Hola%20%F0%9F%98%8A%20Me%20interesa%20cotizar%20y%20conocer%20disponibilidad%20de%20los%20productos%20tecnol%C3%B3gicos%20y%20accesorios%20electr%C3%B3nicos%20que%20vi%20en%20su%20web.%20%C2%BFPodemos%20coordinar%20una%20llamada%20o%20visita%3F" target="_blank" rel="noopener" class="btn btn-whatsapp" style="width: 100%;">
+            💬 Iniciar chat en WhatsApp ahora
+          </a>
+        </div>
+
+        <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+          <h3 style="font-size: 1.35rem; margin-bottom: 0.25rem;">Envíanos una consulta rápida</h3>
+          <div class="control-group">
+            <label for="contactName">Nombre completo *</label>
+            <input type="text" id="contactName" class="form-input" required placeholder="Tu nombre" />
+          </div>
+          <div class="control-group">
+            <label for="contactPhone">Teléfono / WhatsApp *</label>
+            <input type="tel" id="contactPhone" class="form-input" required placeholder="+504 0000-0000" />
+          </div>
+          <div class="control-group">
+            <label for="contactProduct">Producto de interés</label>
+            <select id="contactProduct" class="form-input">
+              <option value="Consulta general">Consulta general del catálogo</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="contactMsg">Mensaje *</label>
+            <textarea id="contactMsg" rows="3" class="form-input" required placeholder="Cuéntanos qué producto te interesa cotizar o si deseas coordinar visita..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar consulta por WhatsApp →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+        <div>
+          <div class="brand" style="color: #FFF; margin-bottom: 0.4rem;">
+            <span class="brand-icon" style="background: var(--accent);">⚡</span>
+            <span>TechImport<span style="color: #F3C6A5;">HN</span></span>
+          </div>
+          <p style="max-width: 420px; font-size: 0.88rem;">Productos tecnológicos y accesorios electrónicos importados desde Estados Unidos para clientes en Honduras.</p>
+        </div>
+        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+          <a href="#inicio">Inicio</a>
+          <a href="#catalogo">Catálogo</a>
+          <a href="#nosotros">Quiénes Somos</a>
+          <a href="#contacto">Contáctanos</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 TechImport HN. Todos los derechos reservados.</span>
+        <span>Precios expresados en Lempiras Hondureños (L) • Sujeto a confirmación de inventario.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODAL PREMIUM DE DETALLE DE PRODUCTO
+       ======================================================================== -->
+  <div class="modal-backdrop" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target === this) closeProductModal()">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeProductModal()" aria-label="Cerrar ventana">✕</button>
+      <div class="modal-body" id="modalBodyContent">
+        <!-- Inyectado dinámicamente -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       DRAWER LATERAL DEL CARRITO DE COMPRA / COTIZACIÓN
+       ======================================================================== -->
+  <div class="cart-drawer-backdrop" id="cartBackdrop" onclick="toggleCart(false)"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de cotización">
+    <div class="cart-header">
+      <div>
+        <h3 style="font-size: 1.15rem;">Tu Carrito de Cotización</h3>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Reserva directa vía WhatsApp Business</span>
+      </div>
+      <button class="modal-close" style="position: static;" onclick="toggleCart(false)" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div class="cart-items-container" id="cartItemsContainer">
+      <!-- Ítems del carrito renderizados dinámicamente -->
+    </div>
+
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-summary-row">
+        <span>Artículos seleccionados:</span>
+        <strong id="cartTotalItems">0</strong>
+      </div>
+      <div class="cart-summary-row">
+        <span>Subtotal referencial:</span>
+        <span id="cartSubtotal">L 0</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Total Referencial:</span>
+        <span id="cartTotal">L 0</span>
+      </div>
+      <p style="font-size: 0.76rem; color: var(--text-muted); margin: 0.65rem 0 1rem;">
+        * Al finalizar se abrirá WhatsApp con el detalle de tu pedido para confirmar disponibilidad sin compromiso.
+      </p>
+      <button type="button" class="btn btn-whatsapp" style="width: 100%; font-size: 1rem; padding: 0.95rem;" onclick="checkoutWhatsApp()">
+        📲 Finalizar pedido por WhatsApp
+      </button>
+      <button type="button" onclick="clearCart()" style="width: 100%; background: none; border: none; color: var(--text-muted); font-size: 0.82rem; margin-top: 0.65rem; cursor: pointer; text-decoration: underline;">
+        Vaciar carrito
+      </button>
+    </div>
+  </aside>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/50499864645?text=Hola%20%F0%9F%98%8A%20Me%20interesa%20cotizar%20y%20conocer%20disponibilidad%20de%20los%20productos%20tecnol%C3%B3gicos%20y%20accesorios%20electr%C3%B3nicos%20que%20vi%20en%20su%20web." target="_blank" rel="noopener" class="floating-wa" aria-label="Contactar por WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+    </svg>
+  </a>
+
+  <!-- Contenedor de Notificaciones Toast -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ========================================================================
+       JAVASCRIPT: DATASET DEL CATÁLOGO, ESTADO DEL CARRITO Y WHATSAPP CHECKOUT
+       ======================================================================== -->
+  <script>
+    /**
+     * DATASET INICIAL DEL CATÁLOGO
+     * Extraído fielmente del documento proporcionado sin inventar modelos, años ni precios.
+     * Campos ausentes marcados explícitamente como "N/D".
+     */
+    const CATALOG_PRODUCTS = [
+      {
+        index: 1,
+        code: "N/D",
+        name: "Airpods max",
+        brand: "APPLE",
+        price: 12500,
+        currency: "L",
+        category: "Productos tecnológicos y accesorios electrónicos",
+        origin: "Importado de EE. UU.",
+        availability: "Disponible / Importado",
+        driveUrl: "https://drive.google.com/file/d/1wQzJNfvGA61eceu74_MSqmaIzzgKSiE_/view?usp=drive_link",
+        description: "Artículo registrado en catálogo oficial bajo la marca APPLE. Disponible para cotización y reserva directa en Honduras."
+      },
+      {
+        index: 2,
+        code: "N/D",
+        name: "Cargador original",
+        brand: "APPLE",
+        price: 2000,
+        currency: "L",
+        category: "Productos tecnológicos y accesorios electrónicos",
+        origin: "Importado de EE. UU.",
+        availability: "Disponible / Importado",
+        driveUrl: "https://drive.google.com/file/d/1jt7zwOvS9ZDHrEHMsW-qQaEP4O5efKeX/view?usp=drive_link",
+        description: "Artículo registrado en catálogo oficial bajo la marca APPLE. Disponible para cotización y reserva directa en Honduras."
+      },
+      {
+        index: 3,
+        code: "N/D",
+        name: "Computadora laptop",
+        brand: "HP",
+        price: 22500,
+        currency: "L",
+        category: "Productos tecnológicos y accesorios electrónicos",
+        origin: "Importado de EE. UU.",
+        availability: "Disponible / Importado",
+        driveUrl: "https://drive.google.com/file/d/1mMwmKHDa1eM2e14spCQkk1N38tSyKWxb/view?usp=drive_link",
+        description: "Artículo registrado en catálogo oficial bajo la marca HP. Disponible para cotización y reserva directa en Honduras."
+      },
+      {
+        index: 4,
+        code: "N/D",
+        name: "Parlante",
+        brand: "JBL",
+        price: 14250,
+        currency: "L",
+        category: "Productos tecnológicos y accesorios electrónicos",
+        origin: "Importado de EE. UU.",
+        availability: "Disponible / Importado",
+        driveUrl: "https://drive.google.com/file/d/18cAeBg7i7oUXHcwX9OE3-Xskl-Qzh_VK/view?usp=drive_link",
+        description: "Artículo registrado en catálogo oficial bajo la marca JBL. Disponible para cotización y reserva directa en Honduras."
+      },
+      {
+        index: 5,
+        code: "N/D",
+        name: "Celular",
+        brand: "Iphone",
+        price: 50000,
+        currency: "L",
+        category: "Productos tecnológicos y accesorios electrónicos",
+        origin: "Importado de EE. UU.",
+        availability: "Disponible / Importado",
+        driveUrl: "https://drive.google.com/file/d/14IaK12pGH0LUVmnLZZFflzlHDmAxbZGD/view?usp=drive_link",
+        description: "Artículo registrado en catálogo oficial bajo la marca Iphone. Disponible para cotización y reserva directa en Honduras."
+      }
+    ];
+
+    const WHATSAPP_NUMBER = "50499864645";
+    const STORAGE_KEY = "techimport_hn_cart_v2";
+
+    // Estado del carrito cargado desde localStorage
+    let cart = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+    /**
+     * Convierte una URL de Google Drive (/file/d/ID/view) en una URL renderizable
+     * directamente en etiquetas <img> manteniendo el enlace original intacto.
+     */
+    function getRenderableDriveImage(driveUrl) {
+      const match = driveUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
+      if (match && match[1]) {
+        return `https://lh3.googleusercontent.com/d/${match[1]}=w800`;
+      }
+      return driveUrl;
+    }
+
+    /**
+     * Formatea precios numéricos a Lempiras con separadores de miles (Ej: L 12,500)
+     */
+    function formatLempiras(amount) {
+      return `L ${Number(amount).toLocaleString("en-US")}`;
+    }
+
+    /**
+     * Inicialización general al cargar el DOM
+     */
+    document.addEventListener("DOMContentLoaded", () => {
+      populateBrandFilter();
+      populateContactSelect();
+      renderFeaturedProducts();
+      renderCatalog(CATALOG_PRODUCTS);
+      updateCartUI();
+
+      // Eventos de filtrado en tiempo real
+      document.getElementById("searchInput").addEventListener("input", applyFilters);
+      document.getElementById("brandFilter").addEventListener("change", applyFilters);
+      document.getElementById("priceFilter").addEventListener("change", applyFilters);
+
+      // Cierre de modal/carrito con tecla Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeProductModal();
+          toggleCart(false);
+        }
+      });
+    });
+
+    /**
+     * Llena dinámicamente el selector de marcas únicas del dataset
+     */
+    function populateBrandFilter() {
+      const brandSelect = document.getElementById("brandFilter");
+      const uniqueBrands = [...new Set(CATALOG_PRODUCTS.map(p => p.brand))];
+      uniqueBrands.forEach(brand => {
+        const option = document.createElement("option");
+        option.value = brand;
+        option.textContent = brand;
+        brandSelect.appendChild(option);
+      });
+    }
+
+    /**
+     * Llena el selector de productos en la sección Contáctanos
+     */
+    function populateContactSelect() {
+      const select = document.getElementById("contactProduct");
+      CATALOG_PRODUCTS.forEach(p => {
+        const option = document.createElement("option");
+        option.value = `${p.name} (${p.brand}) - ${formatLempiras(p.price)}`;
+        option.textContent = `${p.name} — ${p.brand} (${formatLempiras(p.price)})`;
+        select.appendChild(option);
+      });
+    }
+
+    /**
+     * Renderiza la vista previa rápida en el Hero
+     */
+    function renderFeaturedProducts() {
+      const container = document.getElementById("featuredList");
+      container.innerHTML = CATALOG_PRODUCTS.slice(0, 4).map(product => `
+        <div class="showcase-item" onclick="openProductModal(${product.index})">
+          <img 
+            src="${getRenderableDriveImage(product.driveUrl)}" 
+            alt="Foto catálogo: ${product.name} - ${product.brand}"
+            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%22 height=%22100%22 fill=%22%23F1EDE6%22/><text x=%2250%25%22 y=%2252%25%22 font-size=%2211%22 text-anchor=%22middle%22 fill=%22%231F4E46%22>Foto Drive</text></svg>';"
+          />
+          <div class="showcase-item-info">
+            <h4>${product.name}</h4>
+            <span>Marca: ${product.brand} • Código: ${product.code}</span>
+          </div>
+          <div class="showcase-item-price">${formatLempiras(product.price)}</div>
+        </div>
+      `).join("");
+    }
+
+    /**
+     * Renderiza las tarjetas del catálogo
+     */
+    function renderCatalog(products) {
+      const grid = document.getElementById("productsGrid");
+      const countEl = document.getElementById("resultsCount");
+      countEl.textContent = `Mostrando ${products.length} de ${CATALOG_PRODUCTS.length} artículos`;
+
+      if (products.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 3.5rem 1rem; background: var(--surface); border-radius: var(--radius-md); border: 1px solid var(--border);">
+            <h3 style="margin-bottom: 0.5rem;">No encontramos artículos con esos filtros</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.25rem;">Intenta con otro término de búsqueda o restablece los filtros.</p>
+            <button class="btn btn-primary" onclick="resetFilters()">Ver todos los artículos</button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = products.map(product => `
+        <article class="product-card">
+          <div class="product-media" onclick="openProductModal(${product.index})" title="Clic para ampliar imagen y ver detalles">
+            <div class="product-badges">
+              <span class="badge badge-available">● Disponible</span>
+              <span class="badge badge-imported">Importado</span>
+            </div>
+            <img 
+              src="${getRenderableDriveImage(product.driveUrl)}" 
+              alt="Imagen real de catálogo: ${product.name} (${product.brand})"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22200%22><rect width=%22300%22 height=%22200%22 fill=%22%23F1EDE6%22/><text x=%2250%25%22 y=%2248%25%22 font-family=%22sans-serif%22 font-size=%2214%22 text-anchor=%22middle%22 fill=%22%231F4E46%22>${encodeURIComponent(product.name)}</text><text x=%2250%25%22 y=%2260%25%22 font-family=%22sans-serif%22 font-size=%2211%22 text-anchor=%22middle%22 fill=%22%235C6B68%22>Ver enlace Drive en ficha</text></svg>';"
+            />
+            <span class="photo-caption-tag">🔍 Foto real del artículo #${product.index}</span>
+          </div>
+
+          <div class="product-body">
+            <div class="product-brand-row">
+              <span class="product-brand">${product.brand}</span>
+              <span class="product-id">ID/Cód: ${product.code}</span>
+            </div>
+
+            <h3 class="product-title" onclick="openProductModal(${product.index})">${product.name}</h3>
+            <p class="product-desc">${product.description}</p>
+
+            <div class="product-price-box">
+              <span class="price-label">Precio referencial:</span>
+              <span class="price-value">${formatLempiras(product.price)}</span>
+            </div>
+
+            <div class="product-actions">
+              <button type="button" class="btn btn-primary" onclick="addToCart(${product.index})">
+                + Agregar al carrito
+              </button>
+              <button type="button" class="btn btn-icon-only" onclick="openProductModal(${product.index})" title="Ver vista detallada">
+                👁️
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    /**
+     * Filtra el catálogo por texto, marca y rango de precio
+     */
+    function applyFilters() {
+      const query = document.getElementById("searchInput").value.trim().toLowerCase();
+      const brand = document.getElementById("brandFilter").value;
+      const priceRange = document.getElementById("priceFilter").value;
+
+      const filtered = CATALOG_PRODUCTS.filter(item => {
+        const matchesQuery =
+          item.name.toLowerCase().includes(query) ||
+          item.brand.toLowerCase().includes(query) ||
+          item.code.toLowerCase().includes(query);
+
+        const matchesBrand = brand === "ALL" || item.brand === brand;
+
+        let matchesPrice = true;
+        if (priceRange !== "ALL") {
+          const [min, max] = priceRange.split("-").map(Number);
+          matchesPrice = item.price >= min && item.price <= max;
+        }
+
+        return matchesQuery && matchesBrand && matchesPrice;
+      });
+
+      renderCatalog(filtered);
+    }
+
+    function resetFilters() {
+      document.getElementById("searchInput").value = "";
+      document.getElementById("brandFilter").value = "ALL";
+      document.getElementById("priceFilter").value = "ALL";
+      renderCatalog(CATALOG_PRODUCTS);
+    }
+
+    /**
+     * Abre el Modal Premium con detalles completos y foto ampliada del producto
+     */
+    function openProductModal(productIndex) {
+      const product = CATALOG_PRODUCTS.find(p => p.index === productIndex);
+      if (!product) return;
+
+      const singleWaText = encodeURIComponent(
+        `Hola 😊 Me interesa cotizar y conocer disponibilidad de este producto que vi en su web:\n\n` +
+        `• Producto: ${product.name}\n` +
+        `• Marca: ${product.brand}\n` +
+        `• Código/ID: ${product.code}\n` +
+        `• Precio referencial: ${formatLempiras(product.price)}\n\n` +
+        `¿Me confirmas disponibilidad y próximos pasos para coordinar llamada o visita?`
+      );
+
+      const modalContent = document.getElementById("modalBodyContent");
+      modalContent.innerHTML = `
+        <div class="modal-image-pane">
+          <img 
+            src="${getRenderableDriveImage(product.driveUrl)}" 
+            alt="Vista ampliada: ${product.name} - ${product.brand}"
+          />
+          <a href="${product.driveUrl}" target="_blank" rel="noopener" style="font-size: 0.8rem; color: var(--primary); text-decoration: underline;">
+            ↗ Abrir foto original en Google Drive
+          </a>
+        </div>
+
+        <div class="modal-info-pane">
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <span class="badge badge-available">● ${product.availability}</span>
+            <span class="badge badge-imported">${product.origin}</span>
+          </div>
+
+          <span class="product-brand">${product.brand}</span>
+          <h2 id="modalTitle" style="font-size: 1.75rem; margin: 0.2rem 0 0.75rem;">${product.name}</h2>
+          
+          <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.85rem; font-weight: 800; color: var(--primary); margin-bottom: 1rem;">
+            ${formatLempiras(product.price)}
+          </div>
+
+          <p style="color: var(--text-muted); font-size: 0.94rem;">
+            ${product.description}
+          </p>
+
+          <table class="modal-meta-table">
+            <tr>
+              <td>Categoría:</td>
+              <td>${product.category}</td>
+            </tr>
+            <tr>
+              <td>Marca:</td>
+              <td>${product.brand}</td>
+            </tr>
+            <tr>
+              <td>Código / ID:</td>
+              <td>${product.code}</td>
+            </tr>
+            <tr>
+              <td>Disponibilidad:</td>
+              <td>${product.availability}</td>
+            </tr>
+          </table>
+
+          <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-top: auto;">
+            <button type="button" class="btn btn-primary" onclick="addToCart(${product.index}); closeProductModal();">
+              🛒 Agregar al carrito de cotización
+            </button>
+            <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${singleWaText}" target="_blank" rel="noopener" class="btn btn-whatsapp">
+              💬 Cotizar solo este artículo por WhatsApp
+            </a>
+          </div>
+        </div>
+      `;
+
+      document.getElementById("productModal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeProductModal() {
+      document.getElementById("productModal").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    /**
+     * Gestión del Carrito con Persistencia en localStorage
+     */
+    function saveCart() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    function addToCart(productIndex) {
+      const product = CATALOG_PRODUCTS.find(p => p.index === productIndex);
+      if (!product) return;
+
+      const existingItem = cart.find(item => item.index === productIndex);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+
+      saveCart();
+      showToast(`✓ "${product.name}" agregado al carrito`);
+
+      const badge = document.getElementById("cartCountBadge");
+      badge.classList.remove("bump");
+      void badge.offsetWidth;
+      badge.classList.add("bump");
+    }
+
+    function updateItemQty(productIndex, delta) {
+      const itemIndex = cart.findIndex(item => item.index === productIndex);
+      if (itemIndex === -1) return;
+
+      cart[itemIndex].quantity += delta;
+      if (cart[itemIndex].quantity <= 0) {
+        cart.splice(itemIndex, 1);
+      }
+      saveCart();
+    }
+
+    function removeFromCart(productIndex) {
+      cart = cart.filter(item => item.index !== productIndex);
+      saveCart();
+    }
+
+    function clearCart() {
+      cart = [];
+      saveCart();
+      showToast("Carrito vaciado");
+    }
+
+    function updateCartUI() {
+      const container = document.getElementById("cartItemsContainer");
+      const footer = document.getElementById("cartFooter");
+      const badge = document.getElementById("cartCountBadge");
+      const totalItemsEl = document.getElementById("cartTotalItems");
+      const subtotalEl = document.getElementById("cartSubtotal");
+      const totalEl = document.getElementById("cartTotal");
+
+      const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+      badge.textContent = totalQty;
+      totalItemsEl.textContent = totalQty;
+      subtotalEl.textContent = formatLempiras(totalAmount);
+      totalEl.textContent = formatLempiras(totalAmount);
+
+      if (cart.length === 0) {
+        footer.style.display = "none";
+        container.innerHTML = `
+          <div style="text-align: center; padding: 3rem 1rem; margin: auto;">
+            <div style="font-size: 3rem; margin-bottom: 0.75rem;">🛒</div>
+            <h4 style="margin-bottom: 0.4rem;">Tu carrito está vacío</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              Agrega productos tecnológicos del catálogo para generar tu cotización automática por WhatsApp.
+            </p>
+            <button class="btn btn-primary" onclick="toggleCart(false); location.href='#catalogo';">
+              Explorar catálogo
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      footer.style.display = "block";
+      container.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <img src="${getRenderableDriveImage(item.driveUrl)}" alt="${item.name}" />
+          <div class="cart-item-details">
+            <h4>${item.name}</h4>
+            <span class="item-brand">Marca: ${item.brand} • Cód: ${item.code}</span>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.4rem;">
+              <div class="qty-controls">
+                <button type="button" class="qty-btn" onclick="updateItemQty(${item.index}, -1)" aria-label="Disminuir">−</button>
+                <span class="qty-val">${item.quantity}</span>
+                <button type="button" class="qty-btn" onclick="updateItemQty(${item.index}, 1)" aria-label="Aumentar">+</button>
+              </div>
+              <strong style="color: var(--primary); font-size: 0.95rem;">
+                ${formatLempiras(item.price * item.quantity)}
+              </strong>
+            </div>
+          </div>
+          <button type="button" class="remove-item-btn" onclick="removeFromCart(${item.index})" title="Eliminar artículo">
+            🗑️
+          </button>
+        </div>
+      `).join("");
+    }
+
+    function toggleCart(open) {
+      const drawer = document.getElementById("cartDrawer");
+      const backdrop = document.getElementById("cartBackdrop");
+      if (open) {
+        drawer.classList.add("active");
+        backdrop.classList.add("active");
+        document.body.style.overflow = "hidden";
+      } else {
+        drawer.classList.remove("active");
+        backdrop.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    }
+
+    /**
+     * FLUJO PRINCIPAL DE COMPRA / COTIZACIÓN SIN PASARELA (WhatsApp Business)
+     * Construye el mensaje completo URL-encoded y abre wa.me/50499864645
+     */
+    function checkoutWhatsApp() {
+      if (cart.length === 0) {
+        showToast("Agrega al menos un producto antes de finalizar.");
+        return;
+      }
+
+      const itemsLines = cart.map((item, idx) => {
+        const lineSubtotal = formatLempiras(item.price * item.quantity);
+        const unitPrice = formatLempiras(item.price);
+        return (
+          `${idx + 1}. *${item.name}* (Marca: ${item.brand} | Código/ID: ${item.code})\n` +
+          `   • Cantidad: ${item.quantity} x ${unitPrice} = *${lineSubtotal}*`
+        );
+      }).join("\n");
+
+      const totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+      const message =
+        `Hola 😊 Me interesa cotizar y conocer disponibilidad de estos productos tecnológicos y accesorios electrónicos que vi en su web:\n\n` +
+        `📋 *RESUMEN DE MI PEDIDO / RESERVA:*\n` +
+        `${itemsLines}\n\n` +
+        `💰 *Total referencial:* ${formatLempiras(totalAmount)}\n\n` +
+        `¿Me confirmas disponibilidad y próximos pasos? Quedo atento(a) para coordinar una llamada o visita.`;
+
+      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    }
+
+    /**
+     * Formulario de contacto -> Redirige con los datos precargados a WhatsApp
+     */
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById("contactName").value.trim();
+      const phone = document.getElementById("contactPhone").value.trim();
+      const product = document.getElementById("contactProduct").value;
+      const msg = document.getElementById("contactMsg").value.trim();
+
+      const text =
+        `Hola 😊 Soy *${name}* (Tel: ${phone}).\n` +
+        `Me contacto desde la web por interés en: *${product}*.\n\n` +
+        `Mensaje: ${msg}\n\n` +
+        `¿Me confirmas disponibilidad y próximos pasos para coordinar llamada o visita?`;
+
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+      event.target.reset();
+    }
+
+    /**
+     * Utilidades UI (Menú móvil y Toast notifications)
+     */
+    function toggleMobileMenu() {
+      document.getElementById("navLinks").classList.toggle("open");
+    }
+
+    function closeMobileMenu() {
+      document.getElementById("navLinks").classList.remove("open");
+    }
+
+    function showToast(message) {
+      const container = document.getElementById("toastContainer");
+      const toast = document.createElement("div");
+      toast.className = "toast";
+      toast.textContent = message;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateY(10px)";
+        toast.style.transition = "all 0.25s ease";
+        setTimeout(() => toast.remove(), 260);
+      }, 2800);
+    }
+  </script>
+</body>
+</html>
